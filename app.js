@@ -7,6 +7,7 @@ const app = express();
 app.use(bodyParser.urlencoded({extended: true}));
 
 const port = 3000;
+const appKey ="366d73d261dc310d6e32a07d1da99c1d-us11";
 app.use(express.static("public"));
 
 app.get("/", (req, res) => {
@@ -30,7 +31,7 @@ app.post("/", (req, res) => {
   const url = "https://us11.api.mailchimp.com/3.0/lists/4a07137f1e";
   const options = {
     method: "POST",
-    auth: "DiGlicks:366d73d261dc310d6e32a07d1da99c1d-us11"
+    auth: "DiGlicks:" + appKey
   };
   const request = https.request(url, options, (response) => {
     if (response.statusCode === 200 ) {
