@@ -53,10 +53,6 @@ app.post("/failure", (req, res) => {
   res.redirect("/");
 });
 
-app.get("/teste", (req, res) => {
-  res.sendFile(__dirname + "/failure.html");
-});
-
 app.listen(process.env.PORT || port, () => {
   console.log("Server is listening in port " + port + ".");
 });
